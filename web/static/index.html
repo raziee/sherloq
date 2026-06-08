@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sherloq Web</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Sherloq Web</h1>
+      <p>سرویس تحلیل جنایی تصویر دیجیتال</p>
+    </header>
+
+    <main class="layout">
+      <section class="panel controls">
+        <label>
+          ابزار
+          <select id="tool-select"></select>
+        </label>
+        <label>
+          تصویر
+          <input id="image-input" type="file" accept="image/*" />
+        </label>
+        <label id="reference-wrap" class="hidden">
+          تصویر مرجع
+          <input id="reference-input" type="file" accept="image/*" />
+        </label>
+        <label>
+          پارامترها (JSON)
+          <textarea id="params-input" rows="6">{}</textarea>
+        </label>
+        <label class="inline">
+          <input id="async-input" type="checkbox" />
+          اجرای پس‌زمینه برای ابزارهای سنگین
+        </label>
+        <button id="run-button">اجرای تحلیل</button>
+        <p id="status" class="status"></p>
+      </section>
+
+      <section class="panel results">
+        <h2>نتایج</h2>
+        <pre id="json-output">{}</pre>
+        <div id="image-output" class="image-grid"></div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
